@@ -8,7 +8,7 @@
     tools:context=".onboarding.OnboardingOneActivity">
 
     <Button
-        android:id="@+id/btn_home"
+        android:id="@+id/btn_batal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +33,7 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/bayar_sekarang"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_home"
+        app:layout_constraintBottom_toTopOf="@+id/btn_batal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />

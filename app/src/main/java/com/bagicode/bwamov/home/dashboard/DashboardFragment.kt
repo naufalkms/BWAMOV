@@ -2,6 +2,7 @@ package com.bagicode.bwamov.home.dashboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,7 +54,7 @@ class DashboardFragment : Fragment() {
         mDatabase = FirebaseDatabase.getInstance().getReference("Film")
 
         tv_nama.setText(preferences.getValues("nama"))
-        if (preferences.getValues("saldo").equals("")) {
+        if (!preferences.getValues("saldo").equals("")) {
             currency(preferences.getValues("saldo")!!.toDouble(), tv_saldo)
         }
 
@@ -61,6 +62,8 @@ class DashboardFragment : Fragment() {
             .load(preferences.getValues("url"))
             .apply(RequestOptions.circleCropTransform())
             .into(iv_profile)
+
+        Log.v("tamvan", "url "+preferences.getValues("url"))
 
         rv_now_playing.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rv_coming_soon.layoutManager = LinearLayoutManager(context)
